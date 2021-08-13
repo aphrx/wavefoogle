@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.card {
+    margin: 20px;
+    align-items: center;
+    font-family: 'Lobster', cursive;
+    transition: box-shadow 300ms;
+    font-size: 18px;
+    display: inline-block;
+    width: 1000px;
+  }
+
+.video-frame{
+    float: left;
+}
+
+.contents {
+    color: white;
+    font-size: 30px;
+    padding-left: 50px;
+    align-items: center;
+    height: 315px;
+}
