@@ -19,3 +19,8 @@ async def search(phrase: str, db: Session):
     if len(primary_res):
         return primary_res
     return db.query(models.Caption).filter(func.lower(models.Caption.caption).contains(func.lower(phrase))).all()
+
+async def lucky(phrase: str, db: Session):
+    phrase_ws = phrase.replace(" ", "")
+    return db.query(models.Caption).filter(models.Caption.caption.match(f"%{phrase_ws}%")).order_by(func.random()).first()
+    

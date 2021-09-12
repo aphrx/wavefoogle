@@ -1,13 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
 .App {
   background-color: #b01213;
   text-align: center;
+  margin: auto;
   height: 100%;
   top: 0;
   right: 0;
   bottom: 0; 
   left: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 
+.trademark{
+  margin-top: 10px;
+  color: white;
+}
+
+.yt-icon{
+  height: 14px;
+  margin-top: -4px;
+  margin-right: 5px;
+}
 
 .logo {
   height: 200px;
@@ -16,19 +31,38 @@
 
 .load-more {
   display: block !important;
-  margin: 100px !important;
-  
+  margin: 50px !important;
+  background: white !important;
+  text-transform: capitalize !important;
 }
 
 .results {
+  margin-top: 10px;
   color: white;
-  text-align: left;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.name {
+  text-decoration: none;
+  color: white;
+
+}
+
+.name:hover{
+  color: black;
+}
+
+.wvbtn {
+  background: white !important;
+  text-transform: capitalize !important;
+  margin: 10px !important;
+  font-family: 'Open Sans', sans-serif !important;
+  font-weight: 600 !important;
+}
+
+.header {
+  overflow: hidden;
+
 }
 
 .App-header {
@@ -42,20 +76,36 @@
   color: white;
 }
 
+.loading-results {
+  color:white;
+}
+
 .search {
   align-items: center;
   padding: 5px 20px 5px 20px;
+  margin: 10px;
   border-radius: 0.4rem;
   border: none;
   transition: box-shadow 300ms;
   height: 50px;
   width: 600px;
-  font-size: 30px;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+@media only screen and (max-width: 800px) {
+  .search {
+    width: 95vw;
+  }
+}
+
+.video-dropdown {
+  float: right;
 }
 
 .additional-info {
+  text-align: center;
   margin: auto;
-  width: 600px;
 }
 
 .search:focus {

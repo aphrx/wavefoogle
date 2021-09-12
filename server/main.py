@@ -1,16 +1,14 @@
 import fastapi
 import sqlalchemy.orm as orm
 import services
-import schemas
-
-from typing import List
-from fastapi import Response
 from fastapi.middleware.cors import CORSMiddleware
 
-app = fastapi.FastAPI()
+app = fastapi.FastAPI(docs_url=None)
 
 origins = [
-    "http://localhost:3000"
+    "http://localhost:3000",
+    "https://wavefoogle.com",
+    "http://wavefoogle.com"
 ]
 
 app.add_middleware(
@@ -21,10 +19,10 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
-@app.get("/api/video_title")
-async def test_video(videoId: str, db: orm.Session = fastapi.Depends(services.get_db)):
-    return await services.get_title(videoId, db)
-
 @app.get("/api/search")
 async def search(search: str, db: orm.Session = fastapi.Depends(services.get_db)):
     return await services.search(search, db)
+
+@app.get("/api/lucky")
+async def search(search: str, db: orm.Session = fastapi.Depends(services.get_db)):
+    return await services.lucky(search, db)
